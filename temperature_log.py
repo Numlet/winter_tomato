@@ -15,10 +15,12 @@ def get_date_str():
     return date_formatted
 
 socket_on=0
-
+humidity=999
 while True:
-    humity, temperature=Adafruit_DHT.read_retry(Adafruit_DHT.DHT11,pin_number)
+    while humidity>100:
+        humidity, temperature=Adafruit_DHT.read_retry(Adafruit_DHT.DHT11,pin_number)
 
-    line='\n'+str(time.time())+','+get_date_str()+','+str(temperature)+','+str(humity)+','+str(socket_on)
+        
+    line='\n'+str(time.time())+','+get_date_str()+','+str(temperature)+','+str(humidity)+','+str(socket_on)
     with open(saving_file,'a') as my_file:my_file.write(line)
     time.sleep(5)

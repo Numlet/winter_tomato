@@ -14,12 +14,16 @@ date_str=data[:,1]
 temperature=data[:,2]
 humidity=data[:,3]
 socket_on=data[:,4]
+time_list=[datetime.datetime.fromtimestamp(i) for i in date_number]
+print time_list
+print date_number
+print temperature
 plt.figure()
 f, (ax1, ax2,ax3) = plt.subplots(3, sharex=True)
-ax1.plot(date_str,temperature)
+ax1.plot(time_list,temperature)
 ax1.set_title('Temperature (top) and Humidity')
-ax2.plot(date_str,humidity)
-ax3.plot(date_str,socket_on)
+ax2.plot(time_list,humidity)
+ax3.plot(time_list,socket_on)
 # Fine-tune figure; make subplots close to each other and hide x ticks for
 # all but bottom plot.
 f.subplots_adjust(hspace=0)

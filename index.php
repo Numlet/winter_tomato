@@ -4,6 +4,5 @@
 <h1>pa-ta-ta Boris dice patata</h1>
 <?php echo "Hello world<br>";?>
 <?php echo date('Y-m-d H:i:s');?>
-<img src="pajaro.jpg">
-<img src='example.png'=-</body>
+<img src='~/winter_tomato/last_week.png'=-</body>
 </html>

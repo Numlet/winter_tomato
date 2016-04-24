@@ -19,7 +19,7 @@ while True:
     if humidity>100:
         humidity=np.nan
         temperature=np.nan
-    line='\n'+str(time.time())+','+tl.get_date_str()+','+str(temperature)+','+str(humidity)+','+str(socket_on)
+    line='\n'+str(int(time.time()))+','+tl.get_date_str()+','+str(temperature)+','+str(humidity)+','+str(socket_on)
     with open(saving_file,'a') as my_file:my_file.write(line)
     time.sleep(5)
     iplot=iplot+1
